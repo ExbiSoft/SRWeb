@@ -1,0 +1,3 @@
+<?php
+// Editor page
+?>
