@@ -1,0 +1,12 @@
+[
+	{
+		"nodeName": "header",
+		"id": "bar",
+		"className": "tutorials"
+	},
+	{
+		"nodeName": "section",
+		"id": "view",
+		"textContent": "Tutorials page"
+	}
+]

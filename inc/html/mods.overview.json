@@ -1,0 +1,12 @@
+[
+	{
+		"nodeName": "header",
+		"id": "bar",
+		"className": "mods"
+	},
+	{
+		"nodeName": "section",
+		"id": "view",
+		"textContent": "Mods, Overview page"
+	}
+]

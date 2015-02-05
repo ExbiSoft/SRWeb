@@ -1,0 +1,12 @@
+[
+	{
+		"nodeName": "header",
+		"id": "bar",
+		"className": "home"
+	},
+	{
+		"nodeName": "section",
+		"id": "view",
+		"textContent": "Home page"
+	}
+]

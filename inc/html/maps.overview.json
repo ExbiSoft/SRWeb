@@ -1,0 +1,12 @@
+[
+	{
+		"nodeName": "header",
+		"id": "bar",
+		"className": "maps"
+	},
+	{
+		"nodeName": "section",
+		"id": "view",
+		"textContent": "Maps, Overview page"
+	}
+]

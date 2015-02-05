@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron:500|Raleway);
+body{
+	margin: 52px 5px 5px 5px;
+	cursor: default;
+	-webkit-user-select: none;
+}
+
+/* Topbar */
+#bar{
+	background-image: -webkit-linear-gradient(top, transparent, rgba(25, 25, 25, 0.3));
+	background-color: rgb(25, 25, 25);
+	transition: background-color 0.3s;
+	font-family: raleway, arial;
+	color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 15px;
+	box-shadow: 0 0 3px black;
+}
+#bar span{
+	float: left;
+	font-size: 29px;
+	font-family: orbitron;
+	margin: 5px 0;
+}
+#bar ul{
+	list-style: none;
+	float: right;
+	margin: 0;
+}
+#bar li{
+	float: left;
+	padding: 14px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+#bar.home{
+	background-color: #FF4136;
+}
+#bar.maps{
+	background-color: #0074D9;
+}
+#bar.mods{
+	background-color: #289416;
+}
+#bar.tutorials{
+	background-color: #B10DC9;
+}
+#bar.stats{
+	background-color: #FF851B;
+}
+#bar li.active{
+	background-color: rgba(15, 15, 15, 0.4);
+}

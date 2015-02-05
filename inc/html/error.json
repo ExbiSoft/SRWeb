@@ -1,0 +1,16 @@
+[
+	{
+		"nodeName": "body",
+		"clear": true,
+		"nodes": [
+			{
+				"nodeName": "div",
+				"id": "error",
+				"textContent": "An error occured.",
+				"style": {
+					"backgroundColor": "red"
+				}
+			}
+		]
+	}
+]
