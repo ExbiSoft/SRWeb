@@ -18,10 +18,13 @@ void ContentReader::readXNB() {
 		int32_t ver = (int32_t)binary.readUInt32();
 		
 		// throw exp if it isn't Texture2DReader
-		if (wcsstr(name.c_str(), L"Texture2DReaders") == 0) {
+		if (wcsstr(name.c_str(), L"Texture2DReader") == 0) {
 			throw std::logic_error("Not supported reader!");
 		}
 	}
+
+	uint32_t resourceCount = binary.read7BitEncInt();
+	std::cout << "Resource count: " << readerCount << std::endl;
 
 }
 
