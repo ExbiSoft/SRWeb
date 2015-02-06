@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <string>
+#include <wchar.h>
 ContentReader::ContentReader(FILE* f) : binary(f) {}
 
 void ContentReader::readXNB() {
@@ -15,8 +16,11 @@ void ContentReader::readXNB() {
 		// strings are also 7bit encoded ints...
 		std::wstring name = binary.readString();
 		int32_t ver = (int32_t)binary.readUInt32();
-		// doesn't print correctly :D
-		printf("%s ver %d", name, ver);
+		
+		// throw exp if it isn't Texture2DReader
+		if (wcsstr(name.c_str(), L"Texture2DReader") = 0) {
+			throw std::logic_error("Not supported reader!");
+		}
 	}
 
 }
