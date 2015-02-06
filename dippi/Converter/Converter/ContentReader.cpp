@@ -1,11 +1,24 @@
 #include "ContentReader.h"
 #include <stdexcept>
 #include <iostream>
+#include <string>
 ContentReader::ContentReader(FILE* f) : binary(f) {}
 
 void ContentReader::readXNB() {
 	uint32_t endPos = readHeader();
 	std::cout << "Filesize == " << endPos << std::endl;
+
+	// reader count is 7bit encoded int
+	uint32_t readerCount = binary.read7BitEncInt();
+
+	for (uint32_t i = 0; i < readerCount; i++) {
+		// strings are also 7bit encoded ints...
+		std::wstring name = binary.readString();
+		int32_t ver = (int32_t)binary.readUInt32();
+		// doesn't print correctly :D
+		printf("%s ver %d", name, ver);
+	}
+
 }
 
 uint32_t ContentReader::readHeader()
