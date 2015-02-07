@@ -72,6 +72,7 @@
   <ItemGroup>
     <ClInclude Include="include\BinReader.h" />
     <ClInclude Include="include\ContentReader.h" />
+    <ClInclude Include="include\TypeReaderManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

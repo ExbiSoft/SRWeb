@@ -22,9 +22,19 @@ void ContentReader::readXNB() {
 			throw std::logic_error("Not supported reader!");
 		}
 	}
-
+	// should this be 1?
 	uint32_t resourceCount = binary.read7BitEncInt();
 	std::cout << "Resource count: " << readerCount << std::endl;
+
+	uint32_t typeId = binary.read7BitEncInt();
+	if (typeId == 0) {
+		// TODO null object, what then?
+	}
+	else {
+		Texture2DReader texReader;
+		
+		texReader.read(this);
+	}
 
 }
 
@@ -75,3 +85,17 @@ uint32_t ContentReader::readHeader()
 }
 
 
+
+void Texture2DReader::read(ContentReader* reader) {
+	std::cout << "Format: " << (int32_t)reader->getBinary().readUInt32() << std::endl;
+	std::cout << "Width:" << reader->getBinary().readUInt32() << std::endl;
+	std::cout << "Height:" << reader->getBinary().readUInt32() << std::endl;
+
+	uint32_t mips = reader->getBinary().readUInt32();
+	std::cout << "Mipmap count " << mips << std::endl;
+
+	for (size_t i = 0; i < mips; i++) {
+		uint32_t size = reader->getBinary().readUInt32();
+		// TODO read bytes
+	}
+}
