@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <wchar.h>
+#include <algorithm>
 ContentReader::ContentReader(FILE* f) : binary(f) {}
 
 void ContentReader::readXNB() {
@@ -96,6 +97,10 @@ void Texture2DReader::read(ContentReader* reader) {
 
 	for (size_t i = 0; i < mips; i++) {
 		uint32_t size = reader->getBinary().readUInt32();
-		// TODO read bytes
+		std::vector<uint8_t> bytes = reader->getBinary().readBytes(size);
+		std::for_each(bytes.begin(), bytes.end(), [](uint8_t b){
+			printf("%02X, ", b);
+		});
+		std::cout << "\n";
 	}
 }

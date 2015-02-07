@@ -32,8 +32,5 @@
     <ClInclude Include="include\BinReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\TypeReaderManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

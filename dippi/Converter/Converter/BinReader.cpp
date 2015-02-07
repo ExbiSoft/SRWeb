@@ -26,7 +26,7 @@ uint32_t BinReader::readUInt32() {
 	};
 	// http://stackoverflow.com/questions/12240299/convert-bytes-to-int-uint-in-c
 	// byte is 8 bits each, lets shift them
-	return uint32_t(bytes[0]) + (uint32_t(bytes[1]) << 8) + (uint32_t(bytes[2]) << 16) + (uint32_t(bytes[3]) << 24);
+	return uint32_t(bytes[0]) | (uint32_t(bytes[1]) << 8) | (uint32_t(bytes[2]) << 16) | (uint32_t(bytes[3]) << 24);
 }
 
 uint32_t BinReader::readFileSize() {
@@ -95,5 +95,12 @@ wchar_t BinReader::readChar() {
 		result &= ( 1 << (8 - count)) - 1;
 		while (--count) { result <<= 6; result |= (readByte() & 0x3F); }
 	}
+	return result;
+}
+
+std::vector<uint8_t> BinReader::readBytes(uint32_t count) {
+	std::vector<uint8_t> result;
+	result.reserve(count);
+	while (count--) result.push_back(readByte());
 	return result;
 }
